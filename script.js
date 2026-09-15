@@ -612,7 +612,7 @@ function enviarFaltas(idTurma) {
 
 
     const lista =
-        faltosos.join(", ");
+        faltosos.join("\n");
 
 
     const mensagem =
