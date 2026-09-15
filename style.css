@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f6fa;
+    color: #0b1f3a;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    max-width: 950px;
+    margin: 0 auto 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.cabecalho h1 {
+    color: #0b1f3a;
+    margin-bottom: 5px;
+}
+
+.cabecalho p {
+    color: #667085;
+}
+
+.seletor-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.seletor-data label {
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.seletor-data input {
+    padding: 10px;
+    border: 1px solid #ccd2dc;
+    border-radius: 6px;
+}
+
+
+/* =========================
+   TURMAS
+========================= */
+
+main {
+    max-width: 950px;
+    margin: auto;
+}
+
+.turma {
+    background: white;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+    padding: 25px;
+
+    border-left: 5px solid #8b0000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+   CABEÇALHO DA TURMA
+========================= */
+
+.turma-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.turma-header h2 {
+    font-size: 1.25rem;
+}
+
+.status {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 0.85rem;
+    color: #667085;
+}
+
+.contador {
+    font-size: 0.9rem;
+    color: #667085;
+}
+
+.presentes {
+    color: #0b1f3a;
+    font-weight: bold;
+}
+
+.faltosos {
+    color: #8b0000;
+    font-weight: bold;
+}
+
+
+/* =========================
+   LISTA
+========================= */
+
+.lista-alunos {
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+
+.lista-alunos li {
+    padding: 9px 5px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.lista-alunos label {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+}
+
+.lista-alunos input {
+    width: 19px;
+    height: 19px;
+
+    accent-color: #0b1f3a;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.acoes {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+
+    padding: 11px 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-secundario {
+    background: #e9edf3;
+    color: #0b1f3a;
+}
+
+.btn-secundario:hover {
+    background: #dce2eb;
+}
+
+.btn-whatsapp {
+    margin-left: auto;
+
+    background: #8b0000;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background: #650000;
+}
+
+
+/* =========================
+   AÇÕES GERAIS
+========================= */
+
+.acoes-gerais {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+    gap: 10px;
+}
+
+.btn-salvar {
+    background: #0b1f3a;
+    color: white;
+}
+
+.btn-geral {
+    background: #e9edf3;
+    color: #0b1f3a;
+}
+
+.btn-salvar:hover {
+    background: #07162a;
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+.historico {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.historico h2 {
+    margin-bottom: 20px;
+}
+
+.registro {
+    border: 1px solid #e1e5eb;
+
+    border-left: 4px solid #8b0000;
+
+    border-radius: 7px;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.registro-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.registro-info span {
+    font-size: 0.9rem;
+    color: #667085;
+}
+
+.registro-acoes {
+    display: flex;
+    gap: 7px;
+}
+
+.btn-carregar {
+    background: #e9edf3;
+    color: #0b1f3a;
+}
+
+.btn-excluir {
+    background: #8b0000;
+    color: white;
+}
+
+.sem-historico {
+    color: #667085;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .turma {
+        padding: 18px;
+    }
+
+    .turma-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .acoes {
+        flex-wrap: wrap;
+    }
+
+    .btn-whatsapp {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .acoes-gerais {
+        flex-direction: column;
+    }
+
+    .registro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .registro-acoes {
+        width: 100%;
+    }
+
+    .registro-acoes button {
+        flex: 1;
+    }
+}
+
+.rodape {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #667085;
+    text-decoration: none;
+    
+}

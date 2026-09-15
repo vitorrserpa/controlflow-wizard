@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Control Flow</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div>
+            <h1>Control Flow</h1>
+            <p>Control de presença das turmas</p>
+        </div>
+
+        <div class="seletor-data">
+            <label for="data-aula">Data da aula</label>
+            <input type="date" id="data-aula">
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             SEGUNDA-FEIRA 14H
+        ========================== -->
+
+        <div class="turma" id="segunda-14h">
+
+            <div class="turma-header">
+
+                <div>
+                    <h2>Segunda-feira — 14h</h2>
+                    <span class="status">Aguardando chamada</span>
+                </div>
+
+                <div class="contador">
+                    <span class="presentes">0</span> presentes /
+                    <span class="faltosos">12</span> faltas
+                </div>
+
+            </div>
+
+
+            <ol class="lista-alunos">
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Marianne Ribeiro - W2">
+                        Marianne Ribeiro - W2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Julia Lacerda - T2">
+                        Julia Lacerda - T2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Cléo Braz - W2">
+                        Cléo Braz - W2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Helena Nunes - T2">
+                        Helena Nunes - T2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Manuela Garcia - T2">
+                        Manuela Garcia - T2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Alice Gonçalves - T2">
+                        Alice Gonçalves - T2
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Maria Laura - T4">
+                        Maria Laura - T4
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Davi Matta - T4">
+                        Davi Matta - T4
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Tito Aguiar Leichsering - T4">
+                        Tito Aguiar Leichsering - T4
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Anna Luiza Penha - T6">
+                        Anna Luiza Penha - T6
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Gabriela Gomes Costa - W12">
+                        Gabriela Gomes Costa - W12
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox" value="Ana Clara - W2">
+                        Ana Clara - W2
+                    </label>
+                </li>
+
+            </ol>
+
+
+            <div class="acoes">
+
+                <button class="btn-secundario"
+                    onclick="marcarTodos('segunda-14h')">
+                    ✓ Marcar todos
+                </button>
+
+                <button class="btn-secundario"
+                    onclick="limparTodos('segunda-14h')">
+                    Limpar
+                </button>
+
+                <button class="btn-whatsapp"
+                    onclick="enviarFaltas('segunda-14h')">
+                    WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             TERÇA E QUINTA 18H
+        ========================== -->
+
+        <div class="turma" id="terca-quinta-18h">
+
+            <div class="turma-header">
+
+                <div>
+                    <h2>Terça e Quinta-feira — 18h</h2>
+                    <span class="status">Aguardando chamada</span>
+                </div>
+
+                <div class="contador">
+                    <span class="presentes">0</span> presentes /
+                    <span class="faltosos">6</span> faltas
+                </div>
+
+            </div>
+
+
+            <ol class="lista-alunos">
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Pedro Vasconcellos - PREE T.">
+                        Pedro Vasconcellos - PREE T.
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Enzo Guerra Beranger - PREE T.">
+                        Enzo Guerra Beranger - PREE T.
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Vinicius Pecene - PREE T.">
+                        Vinicius Pecene - PREE T.
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Helena Veiga - PREE T.">
+                        Helena Veiga - PREE T.
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Arthur Elmor - PREE T.">
+                        Arthur Elmor - PREE T.
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Davi Motta - PREE T.">
+                        Davi Motta - PREE T.
+                    </label>
+                </li>
+
+            </ol>
+
+
+            <div class="acoes">
+
+                <button class="btn-secundario"
+                    onclick="marcarTodos('terca-quinta-18h')">
+                    ✓ Marcar todos
+                </button>
+
+                <button class="btn-secundario"
+                    onclick="limparTodos('terca-quinta-18h')">
+                    Limpar
+                </button>
+
+                <button class="btn-whatsapp"
+                    onclick="enviarFaltas('terca-quinta-18h')">
+                    WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SEXTA 17H30
+        ========================== -->
+
+        <div class="turma" id="sexta-17h30">
+
+            <div class="turma-header">
+
+                <div>
+                    <h2>Sexta-feira — 17h30</h2>
+                    <span class="status">Aguardando chamada</span>
+                </div>
+
+                <div class="contador">
+                    <span class="presentes">0</span> presentes /
+                    <span class="faltosos">9</span> faltas
+                </div>
+
+            </div>
+
+
+            <ol class="lista-alunos">
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Hélio Cosme Braga Caneda - W4">
+                        Hélio Cosme Braga Caneda - W4
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Grazielle Martins - W4">
+                        Grazielle Martins - W4
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Aline Moreira Mundim - W8">
+                        Aline Moreira Mundim - W8
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Isabella Rosa - W10">
+                        Isabella Rosa - W10
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Heitor Chaves - W10">
+                        Heitor Chaves - W10
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Isabel Salvado - W10">
+                        Isabel Salvado - W10
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="João Guilherme - W10">
+                        João Guilherme - W10
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Brenda Neves - W8">
+                        Brenda Neves - W8
+                    </label>
+                </li>
+
+                <li>
+                    <label>
+                        <input type="checkbox"
+                            value="Monique - W2">
+                        Monique - W2
+                    </label>
+                </li>
+
+            </ol>
+
+
+            <div class="acoes">
+
+                <button class="btn-secundario"
+                    onclick="marcarTodos('sexta-17h30')">
+                    ✓ Marcar todos
+                </button>
+
+                <button class="btn-secundario"
+                    onclick="limparTodos('sexta-17h30')">
+                    Limpar
+                </button>
+
+                <button class="btn-whatsapp"
+                    onclick="enviarFaltas('sexta-17h30')">
+                    WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SALVAR TUDO
+        ========================== -->
+
+        <div class="acoes-gerais">
+
+            <button class="btn-salvar" onclick="salvarTodasTurmas()">
+                💾 Salvar chamada
+            </button>
+
+            <button class="btn-geral" onclick="marcarTodasTurmas()">
+                ✓ Marcar todas as turmas
+            </button>
+
+            <button class="btn-geral" onclick="limparTodasTurmas()">
+                Limpar todas
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             HISTÓRICO
+        ========================== -->
+
+        <section class="historico">
+
+            <h2>Histórico de chamadas</h2>
+
+            <div id="lista-historico">
+                <p class="sem-historico">
+                    Nenhuma chamada salva ainda.
+                </p>
+            </div>
+
+        </section>
+        <p class="rodape">
+            Desenvolvido por <a href="https://github.com/vitorrserpa" target="_blank">Vitor Serpa</a>
+        </p>  
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
