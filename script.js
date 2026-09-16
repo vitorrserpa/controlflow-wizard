@@ -559,6 +559,143 @@ function carregarAutomaticamente() {
 }
 
 
+
+/* =====================================================
+   GOOGLE SHEETS
+===================================================== */
+
+const URL_GOOGLE_SHEETS =
+    "https://script.google.com/macros/s/AKfycbzGCT8MFtmoFWvoE68ugBVniRE5LtCNs103EKHBbFqD5h_pKFrXl4IQ_p3HDFwzOBHZoA/exec";
+
+
+
+/* =====================================================
+   SALVAR FALTAS NO GOOGLE SHEETS
+===================================================== */
+
+async function salvarNoGoogleSheets(idTurma) {
+
+    const turma =
+        document.getElementById(idTurma);
+
+
+    const data =
+        document.getElementById("data-aula").value;
+
+
+    if (!data) {
+
+        alert("Selecione a data da aula.");
+
+        return;
+    }
+
+
+    const checkboxes =
+        turma.querySelectorAll(
+            'input[type="checkbox"]'
+        );
+
+
+    /*
+       Pega somente os alunos
+       que NÃO estão marcados.
+    */
+
+    const faltosos =
+        Array.from(checkboxes)
+            .filter(checkbox => !checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+
+    if (faltosos.length === 0) {
+
+        alert(
+            "Não há faltas para salvar."
+        );
+
+        return;
+    }
+
+
+    const nomeTurma =
+        turma.querySelector("h2").textContent;
+
+
+    /*
+       Dados que serão enviados
+       para o Google Apps Script.
+    */
+
+    const dados = {
+
+        data: formatarData(data),
+
+        turma: nomeTurma,
+
+        faltosos: faltosos
+
+    };
+
+
+    try {
+
+        alert("Salvando faltas no Google Sheets...");
+
+
+        const resposta =
+            await fetch(
+                URL_GOOGLE_SHEETS,
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body: JSON.stringify(dados)
+
+                }
+            );
+
+
+        const resultado =
+            await resposta.json();
+
+
+        if (resultado.sucesso) {
+
+            alert(
+                "✓ Faltas salvas no Google Sheets!"
+            );
+
+        } else {
+
+            alert(
+                "Erro ao salvar: " +
+                resultado.erro
+            );
+
+        }
+
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert(
+            "Não foi possível conectar ao Google Sheets."
+        );
+
+    }
+
+}
+
+
+
+
 /* =====================================================
    WHATSAPP
 ===================================================== */
